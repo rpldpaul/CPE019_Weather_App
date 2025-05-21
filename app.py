@@ -7,14 +7,14 @@ import gdown
 import os
 
 model_file = "weather_cnn_best.h5"
-gdrive_url = "https://drive.google.com/file/d/1nv1NVvsmdgmn5iPpf-3zAGNje8XdAwy3/view?usp=sharing"
+gdrive_file_id = "1nv1NVvsmdgmn5iPpf-3zAGNje8XdAwy3"
 
 # Only download if it doesn't exist yet
 if not os.path.exists(model_file):
-    gdown.download(gdrive_url, model_file, quiet=False)
+    gdown.download(id=gdrive_file_id, output=model_file, quiet=False)
 
 # Load the model
-model = load_model('weather_cnn_best.h5')
+model = load_model(model_file)
 
 # Class labels
 class_labels = ['shine', 'sunrise', 'cloudy', 'rain']
