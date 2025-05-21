@@ -30,7 +30,7 @@ if uploaded_file is not None:
     st.image(image, caption="Uploaded Image", use_column_width=True)
 
     # Preprocess
-    image = image.resize((64, 64))  # Adjust based on your model's expected input
+    image = image.resize((100, 100))  # Adjust based on your model's expected input
     image_array = img_to_array(image)
     image_array = image_array / 255.0  # Normalize if your model was trained this way
     image_array = np.expand_dims(image_array, axis=0)
